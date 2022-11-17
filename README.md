@@ -53,14 +53,14 @@ or [fastly CLI](https://developer.fastly.com/reference/cli/dictionary/create/):
   ```
   fastly dictionary create \
   --version=active --autoclone --write-only=true \
-  --name=fauna_env_variables \
-  --service-id=<the-service-id>
+  --name=fauna_env_variables
   
   fastly dictionary-item update \
   --dictionary-id=DICTIONARY-ID \
   --key=FAUNA_ACCESS_KEY \
   --value=<ACCESS_KEY>
   ```
+  > The `DICTIONARY-ID` can be retrieved by running `fastly dictionary list --version=latest`
 * Activate the service
   ```
   fastly service-version activate --version=latest
