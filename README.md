@@ -16,14 +16,14 @@
 
 This starter kit provides the necessary dependencies and configuration allowing you to immediately write queries that
 store and retrieve data from [Fauna](#about-fauna). It is also a sample for building REST APIs with Compute@Edge.
-The sample simply implements a `GET /` endpoint that provides an example of sending a query request to Fauna.
+The sample simply implements a `GET /` endpoint, providing an example of sending query requests to Fauna.
 In this contrived example, the query simply asks the database to concatenate the words "Hello" and "World", 
 returning the string "Hello World" as a response, but you should be able to send any query to the database.
 
 ## Fauna Setup
 Follow [these](https://docs.fauna.com/fauna/current/learn/quick_start/client_quick_start?lang=javascript#prerequisites)
 instructions from steps 1 through 3 to obtain an access key. For local development, 
-copy and paste the value of the acces key into `API_KEY` in the [fastly.toml](./fastly.toml) file.
+copy and paste the value of the acces key into `FAUNA_ACCESS_KEY` in the [fastly.toml](./fastly.toml) file.
 
 
 ## Test locally
