@@ -1,5 +1,7 @@
-import { q, faunaClient } from './fauna';
+// Copyright Fauna, Inc.
+// SPDX-License-Identifier: MIT-0
 
+import { q, faunaClient } from './fauna';
 
 addEventListener("fetch", (event) => event.respondWith(handleRequest(event)));
 

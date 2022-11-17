@@ -1,4 +1,7 @@
-import 'abortcontroller-polyfill/dist/polyfill-patch-fetch';
+// Copyright Fauna, Inc.
+// SPDX-License-Identifier: MIT-0
+
+import 'abortcontroller-polyfill/dist/polyfill-patch-fetch'; // polyfills AbortController, which is required by the driver
 import faunadb from 'faunadb';
 
 export const q = faunadb.query;

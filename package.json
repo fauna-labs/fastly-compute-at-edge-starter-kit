@@ -1,8 +1,8 @@
 {
   "name": "compute-starter-kit-javascript-empty",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "main": "src/index.js",
-  "author": "oss@fastly.com",
+  "author": "zee.khoo@fauna.com",
   "license": "MIT",
   "engines": {
     "node": ">=16.0.0"

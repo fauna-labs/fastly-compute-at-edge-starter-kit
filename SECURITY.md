@@ -1,9 +1,20 @@
-## Report a security issue
+# Security Policy
 
-The project team welcomes security reports and is committed to providing prompt attention to security issues. Security issues should be reported privately via [Fastly’s security issue reporting process](https://www.fastly.com/security/report-security-issue).
+## Supported Versions
 
-## Security advisories
+The following versions of this software currently receive support for
+security vulnerabilities:
 
-Remediation of security vulnerabilities is prioritized by the project team. The project team endeavors to coordinate remediation with third-party stakeholders, and is committed to transparency in the disclosure process. The team announces security issues via the [Fastly Developer Hub Starter Kits](https://developer.fastly.com/solutions/starters/) site on a best-effort basis.
+| Version | Supported          |
+| ------- | ------------------ |
+| 0.1.0 | :x:                |
 
-Note that communications related to security issues in Fastly-maintained OSS as described here are distinct from [Fastly Security Advisories](https://www.fastly.com/security-advisories).
+End of life (EOL) dates for security support will be posted here.
+
+## Reporting a Vulnerability
+
+If you believe you have found a vulnerability in this repository, please
+do not submit a GitHub issue. Instead, please email security@fauna.com and
+devrel@fauna.com with the subject line _Suspected security vulnerability
+in fauna-labs/<REPOSITORY_NAME>_. Please include the steps
+to reproduce and any exploit code if available.

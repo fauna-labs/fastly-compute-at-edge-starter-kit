@@ -1,14 +1,24 @@
-# Starter Kit for Fauna
+# Fauna + Fastly Compute@Edge Starter Kit
+
+> This is a starter-kit for using the [Fauna JavaScript Driver](https://github.com/fauna/faunadb-js) 
+> on [Compute@Edge](https://www.fastly.com/products/edge-compute). 
+
+
 
 [![Deploy to Fastly](https://deploy.edgecompute.app/button)](https://deploy.edgecompute.app/deploy)
 
+**For more details about this and other starter kits for Compute@Edge, see the [Fastly Developer Hub](https://developer.fastly.com/solutions/starters/)**.
 
-**For more details about other starter kits for Compute@Edge, see the [Fastly developer hub](https://developer.fastly.com/solutions/starters)**
 
-## 
+---
 
-This is a Fauna starter-kit for running the [FaunaDB JavaScript Driver](https://github.com/fauna/faunadb-js) 
-on Compute@Edge.
+## About this Starter
+
+This starter kit provides the necessary dependencies and configuration allowing you to immediately write queries that
+store and retrieve data from [Fauna](#about-fauna). It is also a sample for building REST APIs with Compute@Edge.
+The sample simply implements a `GET /` endpoint that provides an example of sending a query request to Fauna.
+In this contrived example, the query simply asks the database to concatenate the words "Hello" and "World", 
+returning the string "Hello World" as a response, but you should be able to send any query to the database.
 
 ## Fauna Setup
 Follow [these](https://docs.fauna.com/fauna/current/learn/quick_start/client_quick_start?lang=javascript#prerequisites)
@@ -60,6 +70,16 @@ or [fastly CLI](https://developer.fastly.com/reference/cli/dictionary/create/):
   fastly log-tail
   ```
 
-## Security issues
+## Contributing
 
-Please see our [SECURITY.md](SECURITY.md) for guidance on reporting security-related issues.
+Please see [CONTRIBUTING](CONTRIBUTING.md).
+
+## About Fauna
+Fauna is a distributed document-relational database delivered as a cloud API. 
+It combines support for semi-structured data with powerful relational features such as foreign keys, views, and joins. 
+It's native serverless architecture means having to worry less about operations, and is well suited to building
+edge applications using Fastly's Compute@Edge.
+
+## Additional Resources
+* [Fastly - Compute@Edge Documentation](https://docs.fastly.com/products/compute-at-edge)
+* [Fauna JavaScript Driver Documentation](https://docs.fauna.com/fauna/current/drivers/javascript?lang=javascript)
