@@ -9,7 +9,7 @@ description = "A starter kit for using Fauna on Fastly Compute@Edge"
 language = "javascript"
 manifest_version = 2
 name = "Fastly Compute@Edge Starter kit for Fauna"
-service_id = "51s11BXj47GjCIOyKm9D06"
+service_id = ""
 
 [local_server]
 
