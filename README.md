@@ -1,4 +1,4 @@
-# Empty Starter Kit for JavaScript
+# Starter Kit for Fauna
 
 [![Deploy to Fastly](https://deploy.edgecompute.app/button)](https://deploy.edgecompute.app/deploy)
 
