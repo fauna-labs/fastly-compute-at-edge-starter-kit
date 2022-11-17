@@ -1,5 +1,27 @@
-manifest_version = 2
-name = "Empty starter for JavaScript"
-description = "An empty application template for the Fastly Compute@Edge environment which simply returns a 200 OK response."
-authors = ["<oss@fastly.com>"]
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["zee.khoo@fauna.com"]
+description = "A starter kit for using Fauna on Fastly Compute@Edge"
 language = "javascript"
+manifest_version = 2
+name = "Fastly Compute@Edge Starter kit for Fauna"
+service_id = "51s11BXj47GjCIOyKm9D06"
+
+[local_server]
+
+  [local_server.backends]
+
+    [local_server.backends.fauna]
+      url = "https://db.fauna.com"
+
+  [local_server.dictionaries]
+
+    [local_server.dictionaries.fauna_env_variables]
+      format = "inline-toml"
+
+      [local_server.dictionaries.fauna_env_variables.contents]
+        FAUNA_ACCESS_KEY = "<secret>"
+
+[scripts]
+  build = "npm exec webpack && npm exec js-compute-runtime ./bin/index.js ./bin/main.wasm"
