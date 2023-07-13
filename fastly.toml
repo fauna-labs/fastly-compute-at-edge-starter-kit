@@ -7,7 +7,7 @@
 authors = ["zee.khoo@fauna.com"]
 description = "A starter kit for using Fauna on Fastly Compute@Edge"
 language = "javascript"
-manifest_version = 2
+manifest_version = 3
 name = "Fastly Compute@Edge Starter kit for Fauna"
 service_id = ""
 

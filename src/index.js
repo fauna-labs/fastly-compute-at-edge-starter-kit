@@ -1,40 +1,48 @@
 // Copyright Fauna, Inc.
 // SPDX-License-Identifier: MIT-0
 
-import { q, faunaClient } from './fauna';
+import { CacheOverride } from "fastly:cache-override";
+import { ConfigStore } from "fastly:config-store";
+import { Client, fql } from "fauna";
+import { FastlyFetchClient } from './fauna';
 
 addEventListener("fetch", (event) => event.respondWith(handleRequest(event)));
+
 
 async function handleRequest(event) {
   const req = event.request;
   const method = req.method;
-  const url = new URL(event.request.url);
-  const pathname = url.pathname;
+  const requestUrl = new URL(event.request.url);
+  const pathname = requestUrl.pathname;
 
   const dict = new ConfigStore("fauna_env_variables");
-  const API_KEY = dict.get("FAUNA_ACCESS_KEY");
-  
+  const secret = dict.get("FAUNA_ACCESS_KEY");
+  const url = "https://db.fauna.com";
+  const backend = "fauna";
+
   // e.g. GET /
   if (method == "GET" && pathname == "/") {
-    try {      
+    try {
+      // you can pass in fetch options like this
       const cacheOverride = new CacheOverride("override", { ttl: 60 });
+      const options = { cacheOverride }
 
-      const res = await faunaClient.query(
-        // Place FQL query here. e.g. 
-        q.Concat(["Hello", "World"], " "),
-        {
-          secret: API_KEY, // Provides the API key to the Fauna database
-          cacheOverride    // fetch() options (e.g. cacheOverride) can be passed in as such
-        } 
-      )
+      const client = new Client({ secret }, new FastlyFetchClient(url, backend, options));
+      const res = await client.query(fql`
+        let helloWorld = "Hello " + "World"
+        helloWorld
+      `);
+
+      client.close();
+
       return new Response(
-        JSON.stringify(res, null, 2), 
+        JSON.stringify(res.data, null, 2), 
         { status: 200 }
       );
     } catch(err) {
       return new Response(
-        err.message,
-        { status: err.requestResult.statusCode }
+        err.queryInfo.summary,
+        { status: err.httpStatus }
       );
     }
   }
