@@ -31,12 +31,15 @@ copy and paste the value of the acces key into `FAUNA_ACCESS_KEY` in the [fastly
 fastly compute serve
 ```
 
-## Deploy
-* Deploy using the CLI
+## Deploy using [Fastly CLI](https://developer.fastly.com/learning/compute/#install-the-fastly-cli)
+* Deploy
   ```
-  fastly compute deploy
+  fastly compute publish --status-check-off
   ```
   When prompted, provide the following values:
+  * Create a new service: `y`
+  * Service name: *Provide name or use defaulted value*
+  * Domain: *Provide domain name or use dafaulted value*
   * Backend (hostname or IP address, or leave blank to stop adding backends): `db.fauna.com`
   * Backend port number: `443`
   * Backend name: `fauna`
@@ -49,18 +52,25 @@ or [fastly CLI](https://developer.fastly.com/reference/cli/dictionary/create/):
   * Set write-only = `true`
   * Create a dictionary item with the key = `FAUNA_ACCESS_KEY` and value = the access key obtained from the Fauna database.
 
-  e.g.
-  ```
-  fastly dictionary create \
-  --version=active --autoclone --write-only=true \
-  --name=fauna_env_variables
-  
-  fastly dictionary-item update \
-  --dictionary-id=DICTIONARY-ID \
-  --key=FAUNA_ACCESS_KEY \
-  --value=<ACCESS_KEY>
-  ```
-  > The `DICTIONARY-ID` can be retrieved by running `fastly dictionary list --version=latest`
+  Example steps using CLI:
+  1. Create dictionary
+      ```
+      fastly dictionary create \
+      --version=active --autoclone --write-only \
+      --name=fauna_env_variables
+      ```
+  2. Get the dictionary Id
+      ```
+      fastly dictionary list --version=latest
+      ```  
+  3. Enter the key-value pair
+      ```
+      fastly dictionary-entry update \
+      --dictionary-id=DICTIONARY-ID \
+      --key=FAUNA_ACCESS_KEY \
+      --value=<ACCESS_KEY>
+      ```
+
 * Activate the service
   ```
   fastly service-version activate --version=latest

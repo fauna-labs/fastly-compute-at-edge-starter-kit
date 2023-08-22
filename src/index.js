@@ -21,9 +21,10 @@ async function handleRequest(event) {
   const backend = "fauna";
 
   // e.g. GET /
+  // Makes a simple call to Fauna. Returns "Hello World" if successfully connected to the database
   if (method == "GET" && pathname == "/") {
     try {
-      // you can pass in fetch options like this
+      // Can pass in fetch options like this
       const cacheOverride = new CacheOverride("override", { ttl: 60 });
       const options = { cacheOverride }
 
