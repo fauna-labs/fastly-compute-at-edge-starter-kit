@@ -22,8 +22,8 @@ returning the string "Hello World" as a response, but you should be able to send
 
 ## Fauna Setup
 Follow [these](https://docs.fauna.com/fauna/current/learn/quick_start/client_quick_start?lang=javascript#prerequisites)
-instructions from steps 1 through 3 to obtain an access key. For local development, 
-copy and paste the value of the acces key into `FAUNA_ACCESS_KEY` in the [fastly.toml](./fastly.toml) file.
+instructions to [create a database](https://docs.fauna.com/fauna/current/get_started/client_quick_start?lang=javascript#create-a-database) and [get a database access token](https://docs.fauna.com/fauna/current/get_started/client_quick_start?lang=javascript#get-a-database-access-token). For local development, 
+copy and paste the value of the database access token into `FAUNA_ACCESS_KEY` in the [fastly.toml](./fastly.toml) file.
 
 
 ## Test locally
@@ -50,7 +50,7 @@ or [fastly CLI](https://developer.fastly.com/reference/cli/dictionary/create/):
 
   * Dictionary name = `fauna_env_variables`
   * Set write-only = `true`
-  * Create a dictionary item with the key = `FAUNA_ACCESS_KEY` and value = the access key obtained from the Fauna database.
+  * Create a dictionary item with the key = `FAUNA_ACCESS_KEY` and value = the database access token obtained from the Fauna database.
 
   Example steps using CLI:
   1. Create dictionary
