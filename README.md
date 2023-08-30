@@ -92,4 +92,4 @@ edge applications using Fastly's Compute@Edge.
 
 ## Additional Resources
 * [Fastly - Compute@Edge Documentation](https://docs.fastly.com/products/compute-at-edge)
-* [Fauna JavaScript Driver Documentation](https://docs.fauna.com/fauna/current/drivers/javascript?lang=javascript)
+* [Fauna JavaScript Driver Documentation](https://docs.fauna.com/fauna/current/drivers/supported#jsdriver)
