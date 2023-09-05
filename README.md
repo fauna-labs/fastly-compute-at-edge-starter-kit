@@ -1,6 +1,6 @@
 # Fauna + Fastly Compute@Edge Starter Kit
 
-> This is a starter-kit for using the [Fauna JavaScript Driver](https://github.com/fauna/faunadb-js) 
+> This is a starter-kit for using the [Fauna JavaScript Driver](https://github.com/fauna/fauna-js) 
 > on [Compute@Edge](https://www.fastly.com/products/edge-compute). 
 
 
@@ -92,4 +92,4 @@ edge applications using Fastly's Compute@Edge.
 
 ## Additional Resources
 * [Fastly - Compute@Edge Documentation](https://docs.fastly.com/products/compute-at-edge)
-* [Fauna JavaScript Driver Documentation](https://docs.fauna.com/fauna/current/drivers/supported#jsdriver)
+* [Fauna - JavaScript Driver Documentation](https://docs.fauna.com/fauna/current/drivers/supported#jsdriver)
